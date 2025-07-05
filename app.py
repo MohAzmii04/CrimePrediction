@@ -42,7 +42,7 @@ if uploaded_file is not None:
 
     df['Tingkat_Penanganan'] = df['Rata_Rata_Penyelesaian(%)'].apply(klasifikasi)
 
-    features = ['Jumlah Tindak Pidana 2021', 'Jumlah Tindak Pidana 2022']
+    features = ['Jumlah Tindak Pidana']
     target = 'Tingkat_Penanganan'
 
     X = df[features]
@@ -107,8 +107,7 @@ if uploaded_file is not None:
         st.title("📊 Input Prediksi")
         st.markdown("""Masukkan estimasi jumlah kasus untuk dua tahun terakhir untuk memprediksi tingkat penanganan kriminalitas.""")
 
-        tahun_2021 = st.number_input("Jumlah Kasus 2021", min_value=0, value=5000)
-        tahun_2022 = st.number_input("Jumlah Kasus 2022", min_value=0, value=7000)
+        tahun = st.number_input("Jumlah Kasus ", min_value=0, value=7000)
 
         if st.button("Prediksi Sekarang", use_container_width=True):
             input_data = np.array([[tahun_2021, tahun_2022]])
@@ -135,9 +134,7 @@ else:
 | Kolom                                | Keterangan                          |
 | ------------------------------------ | ----------------------------------- |
 | `Kepolisian Daerah`                  | Nama wilayah kepolisian             |
-| `Jumlah Tindak Pidana 2021`          | Jumlah kasus tahun 2021             |
-| `Jumlah Tindak Pidana 2022`          | Jumlah kasus tahun 2022             |
-| `Penyelesaian tindak pidana 2021(%)` | Persentase kasus selesai tahun 2021 |
-| `Penyelesaian tindak pidana 2022(%)` | Persentase kasus selesai tahun 2022 |
+| `Jumlah Tindak Pidana`               | Jumlah kasus tahun                  |
+| `Penyelesaian tindak pidana (%)`     | Persentase kasus selesai tahun      |
 
     """)
