@@ -39,9 +39,9 @@ if uploaded_file is not None:
         df['Rata_Rata_Penyelesaian(%)'] = df[selesai_terakhir].mean(axis=1)
 
         def klasifikasi(p):
-            if p > 70:
+            if p > 80:
                 return 'Tinggi'
-            elif p >= 55:
+            elif p >= 50:
                 return 'Sedang'
             return 'Rendah'
 
