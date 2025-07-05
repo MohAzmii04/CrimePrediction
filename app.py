@@ -38,13 +38,14 @@ if uploaded_file is not None:
         # Hitung rata-rata penyelesaian
         df['Rata_Rata_Penyelesaian(%)'] = df[selesai_terakhir].mean(axis=1)
 
-        def klasifikasi(p):
-            if p > 75:
-                return 'Tinggi'
-            elif p < 70:
-                return 'Sedang'
-            elif p <= 50:
-                return 'Rendah'
+    def klasifikasi(p):
+        if p > 75:
+            return 'Tinggi'
+        elif p >= 51 and p <= 75:
+            return 'Sedang'
+        else:
+            return 'Rendah'
+
 
         df['Tingkat_Penanganan'] = df['Rata_Rata_Penyelesaian(%)'].apply(klasifikasi)
 
