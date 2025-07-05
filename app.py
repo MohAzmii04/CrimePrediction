@@ -41,8 +41,9 @@ if uploaded_file is not None:
         def klasifikasi(p):
             if p > 75:
                 return 'Tinggi'
-            elif p >= 50:
+            elif p <= 74:
                 return 'Sedang'
+            elif p < 50:
             return 'Rendah'
 
         df['Tingkat_Penanganan'] = df['Rata_Rata_Penyelesaian(%)'].apply(klasifikasi)
