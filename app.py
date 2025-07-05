@@ -156,7 +156,7 @@ else:
     st.warning("Silakan unggah file dataset (.csv) melalui sidebar untuk memulai.")
     st.markdown("""
     #### Format Dataset yang Diperlukan:
-    | Kepolisian Daerah | Jumlah Tindak Pidana 2022 | Jumlah Tindak Pidana 2023 | Penyelesaian tindak pidana 2022(%) | Penyelesaian tindak pidana 2023(%) |
+    | Kepolisian Daerah | Jumlah Tindak Pidana 2023 | Jumlah Tindak Pidana 2024 | Penyelesaian tindak pidana 2023(%) | Penyelesaian tindak pidana 2024(%) |
     |-------------------|---------------------------|---------------------------|--------------------------------------|--------------------------------------|
     | POLDA ACEH        | 5500                      | 5800                      | 65.5                                 | 68.2                                 |
     | POLDA SUMUT       | 25000                     | 26100                     | 72.1                                 | 75.0                                 |
