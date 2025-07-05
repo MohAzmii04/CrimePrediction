@@ -117,8 +117,13 @@ if uploaded_file is not None:
                     proba = model.predict_proba(input_scaled)
 
                     st.success(f"Tingkat Penanganan: {hasil[0]}")
-                    st.subheader("Probabilitas:")
-                    st.dataframe(pd.DataFrame(proba, columns=class_names))
+                    st.subheader("Probabilitas Prediksi:")
+                    proba_df = pd.DataFrame(proba, columns=class_names)
+                    proba_df.index = ["Probabilitas"]
+                    st.dataframe(proba_df.T)
+
+                    st.subheader("Visualisasi Probabilitas:")
+                    st.bar_chart(proba_df.T)
 
             elif selected == "Tentang":
                 st.title("ℹ️ Tentang Aplikasi")
