@@ -31,7 +31,7 @@ if uploaded_file is not None:
         df = df[df['Kepolisian Daerah'] != 'INDONESIA'].reset_index(drop=True)
 
     # Feature Engineering
-    df['Rata_Rata_Penyelesaian(%)'] = (df['Penyelesaian tindak pidana 2021(%)'] + df['Penyelesaian tindak pidana 2022(%)']) / 2
+    df['Tingkat_Penanganan'] = df['Penyelesaian tindak pidana (%)'].apply(klasifikasi)
 
     def klasifikasi(p):
         if p > 70:
